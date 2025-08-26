@@ -1,0 +1,59 @@
+# Llama Vision Captioning - Conda Environment
+# Server-friendly environment with minimal essential packages only
+# Review and modify this file before installation
+
+name: llama-vision
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Core Python
+  - python=3.10
+  - pip
+
+  # Essential build tools (no sudo required)
+  - cmake
+  - make
+  - git
+
+  # PyTorch with CUDA support (choose one section below)
+  # GPU Version (recommended for servers with NVIDIA GPUs)
+  - pytorch
+  - torchvision  
+  - torchaudio
+  - pytorch-cuda=12.1
+
+  # CPU Version (uncomment if no GPU available)
+  # - pytorch-cpu
+  # - torchvision-cpu
+  # - torchaudio-cpu
+
+  # Core dependencies for llama.cpp
+  - numpy>=1.24.0
+  - scipy>=1.10.0
+
+  # Image processing
+  - pillow>=10.0.0
+
+  # Progress and utilities  
+  - tqdm>=4.65.0
+  - pyyaml>=6.0
+  - requests>=2.31.0
+
+  # HuggingFace ecosystem
+  - transformers>=4.36.0
+  - tokenizers>=0.15.0
+
+  # Pip-only packages (not available in conda)
+  - pip:
+    - openai>=1.0.0
+    - huggingface-hub>=0.20.0
+    - gdown>=4.7.0
+
+# Optional packages (comment out if not needed):
+# - opencv  # For advanced image processing
+# - jupyter # For debugging/development
+# - ipython # Better REPL
