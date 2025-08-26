@@ -1,0 +1,42 @@
+# Configuration for Llama Vision Captioning
+# Advanced users can modify these settings
+
+# Model settings
+model:
+  name: "GazTrab/Qwen2.5-VL-AIO"
+  quantization: "q8_0"  # q8_0, q4_0, f16, etc.
+
+# Server settings
+server:
+  host: "localhost"
+  port: 8080
+  max_tokens: 4096
+  temperature: 0.1
+  parallel_slots: 10
+  context_size: 8192
+  gpu_layers: 999  # -1 for auto, 0 for CPU only
+
+# Processing settings
+processing:
+  max_workers: 4
+  max_retries: 3
+  timeout_seconds: 30
+  checkpoint_interval: 10  # Save checkpoint every N files
+
+# Dataset settings
+dataset:
+  gdrive_id: "1PZZ98Fp6OLBjZpnsr-gvxUKMm8m7Pkq7"
+  supported_formats: [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp"]
+
+# Logging settings
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "captioning.log"
+  console: true
+
+# Directory settings
+directories:
+  workspace: "workspace"
+  models: "workspace/models"
+  dataset: "workspace/dataset"
+  output: "workspace/dataset/ground_truth/captions"

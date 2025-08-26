@@ -1,0 +1,26 @@
+# Core dependencies for llama.cpp vision captioning
+openai>=1.0.0
+huggingface-hub>=0.20.0
+transformers>=4.36.0
+pillow>=10.0.0
+tqdm>=4.65.0
+pyyaml>=6.0
+gdown>=4.7.0
+
+# Numpy and scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Additional utilities
+requests>=2.31.0
+urllib3>=2.0.0
+packaging>=23.0
+filelock>=3.12.0
+tokenizers>=0.15.0
+
+# Optional: For better image processing
+opencv-python-headless>=4.8.0
+
+# Development tools (optional)
+black>=23.0.0
+isort>=5.12.0
